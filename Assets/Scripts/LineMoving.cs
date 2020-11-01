@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LineMoving : MonoBehaviour
 {
@@ -14,6 +12,11 @@ public class LineMoving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.z < -70f)
+        {
+            Destroy(gameObject);
+        }
+
         transform.position -= new Vector3(0, 0, (movingSpeed * Time.deltaTime) * 10);
     }
 }
