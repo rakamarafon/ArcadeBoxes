@@ -3,11 +3,14 @@
 public class Player : MonoBehaviour
 {
     public static bool loose = false;
+    public static int scope;
     public float speed = 60.0f;
+    public GameObject restartBtn;
 
     private float minX = -10.0f;
     private float maxX = 9.0f;
     private string enemyTag = "EnemyObject";
+    private string coinTag = "CoinObject";
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +37,23 @@ public class Player : MonoBehaviour
         }        
     }    
 
+    public static void Restart()
+    {
+        loose = false;
+        scope = 0;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == enemyTag)
         {
             loose = true;
+            restartBtn.SetActive(true);
+        }
+        else if(other.gameObject.tag == coinTag)
+        {
+            scope++;
+            Debug.Log(scope);
         }
     }
 }
