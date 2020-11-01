@@ -17,7 +17,7 @@ public class LineSpawn : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        while(true)
+        while(!Player.loose)
         {
             Instantiate(line, new Vector3(-0.44f, 1.28f, 86.3f), Quaternion.identity);
             yield return new WaitForSeconds(3f);
