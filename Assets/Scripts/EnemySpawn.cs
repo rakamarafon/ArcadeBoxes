@@ -23,7 +23,7 @@ public class EnemySpawn : MonoBehaviour
         {
             //ot -12 do 11
             Instantiate(enemy, new Vector3(Random.Range(-12f, 11f), 3.6f, 86f), Quaternion.identity);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
         }
     }
 }

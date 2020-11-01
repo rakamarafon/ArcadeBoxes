@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     public static int scope;
     public float speed = 60.0f;
     public GameObject restartBtn;
+    public AudioSource coinAudio;
 
     private float minX = -10.0f;
     private float maxX = 9.0f;
@@ -15,7 +16,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        coinAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
         else if(other.gameObject.tag == coinTag)
         {
             scope++;
+            coinAudio.Play();
             Debug.Log(scope);
         }
     }

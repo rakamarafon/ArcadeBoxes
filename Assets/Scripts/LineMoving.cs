@@ -19,7 +19,7 @@ public class LineMoving : MonoBehaviour
 
         if(!Player.loose)
         {
-            transform.position -= new Vector3(0, 0, (movingSpeed * Time.deltaTime) * 10);
+            transform.position -= new Vector3(0, 0, (movingSpeed * Time.deltaTime) * 5);
         }        
     }
 }
